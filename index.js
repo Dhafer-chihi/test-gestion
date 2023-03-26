@@ -19,7 +19,7 @@ sequelize.initDb()
 
 
 app.get('/' , (req, res)=>{
-  res.json('hello')
+  res.send('hello')
 })
 
 
