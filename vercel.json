@@ -1,0 +1,28 @@
+{
+    "builds": [
+      { "src": "index.js", "use": "@vercel/node" }
+    ],
+    "env": {
+      "DATABASE_HOST": "3306",
+      "DATABASE_NAME": "gestion",
+      "DATABASE_USERNAME": "sequelize",
+      "DATABASE_PASSWORD": "rootroot"
+    },
+    "functions": {
+      "api/**/*": {
+        "memory": 512,
+        "maxDuration": 10
+      }
+    },
+    "routes": [
+      { "src": "/api/.*", "dest": "api/index.js" }
+    ],
+    "version": 2,
+    "hooks": {
+      "build": {
+        "src": "npm run migrate",
+        "quiet": false
+      }
+    }
+  }
+  
