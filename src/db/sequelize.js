@@ -5,13 +5,10 @@ const patientModel = require('../models/patient')
 const users = require('../db/users')
 const patients = require('../db/patients')
 
-const sequelize = new Sequelize(
+const sequelize = new Sequelize( 'gestion','sequelize','rootroot',
     {
-        database : 'gestion',
-        username : 'sequelize',
-        password : 'rootroot',
+        host : 'localhost',
         dialect : 'mysql',
-        port : 3306,
         logging : true
     }
     
